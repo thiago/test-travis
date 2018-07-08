@@ -19,15 +19,11 @@ script:
 
 deploy:
   - provider: script
-    script:
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    - docker logout
+    script: ci.sh
     on:
       branch: master
 
   - provider: script
-    script:
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    - docker logout
+    script: ci.sh
     on:
       tags: true
