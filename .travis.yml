@@ -19,11 +19,11 @@ script:
 
 deploy:
   - provider: script
-    script: ci.sh
+    script: chmod +x ./ci.sh && ./ci.sh
     on:
       branch: master
 
   - provider: script
-    script: ci.sh
+    script: chmod +x ./ci.sh && ./ci.sh
     on:
       tags: true
